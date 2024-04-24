@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: Pessoa
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_Pessoa?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSl=false
+    username: root
+    password: root
+    show-sql: true

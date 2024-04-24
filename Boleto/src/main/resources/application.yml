@@ -1,0 +1,13 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: Boleto
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_boleto?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSl=false
+    username: root
+    password: root
+    show-sql: true
