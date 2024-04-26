@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "1174147a-b618-43dd-8744-8f3844e700a9",
+		"name": "Desafio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Boleto",
+			"item": [
+				{
+					"name": "Criar Boleto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"valor\": 500,\r\n  \"idPessoa\": 1,\r\n  \"valorPago\": 100.00,\r\n  \"dataVencimento\": \"2024-04-30\",\r\n  \"dataPagamento\": \"2024-04-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/boleto",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"boleto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Lista Boletos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/boleto",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"boleto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Boleto por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/boleto/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"boleto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Boleto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"Vencido\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/boleto/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"boleto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Boleto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/boleto/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"boleto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Realizar Pagamento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/boleto/1/pagamento?valorPago=1000&dataPagamento=2024-10-30",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"boleto",
+								"1",
+								"pagamento"
+							],
+							"query": [
+								{
+									"key": "valorPago",
+									"value": "1000"
+								},
+								{
+									"key": "dataPagamento",
+									"value": "2024-10-30"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pessoa",
+			"item": [
+				{
+					"name": "Criar Usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Gustavo\",\r\n    \"cpf\": \"130.573.480-76\",\r\n    \"endereco\": \"Av Paulista\",\r\n    \"dataNascimento\": \"1998-10-25\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pessoa/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoa",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Todos Usuários",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Pessoa por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pessoa/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoa",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Dados Usuário",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Martins\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pessoa/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoa",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pessoa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pessoa/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoa",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Pessoas com Boletos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/pessoa/api/1/boletos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoa",
+								"api",
+								"1",
+								"boletos"
+							],
+							"query": [
+								{
+									"key": "idPessoa",
+									"value": "6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
