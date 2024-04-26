@@ -20,7 +20,7 @@ public class Boleto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idBoleto;
-    @NotNull
+    @Column(name = "id_pessoa", nullable = false)
     private Long idPessoa;
     private BigDecimal valor;
     private BigDecimal valorPago;
@@ -28,6 +28,4 @@ public class Boleto {
     private LocalDate dataPagamento;
     @Enumerated(EnumType.STRING)
     private StatusBoleto status;
-
-
 }
