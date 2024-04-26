@@ -12,7 +12,14 @@ public class RestExceptionHandle {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(BoletoNotFoundException.class)
     @ResponseBody
-    public ErrorResponse handleTaskNotFoundException(BoletoNotFoundException ex) {
+    public ErrorResponse handleBoletoNotFoundException(BoletoNotFoundException ex) {
+        return new ErrorResponse(HttpStatus.NOT_FOUND.value(), ex.getMessage());
+    }
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(PessoaNotFoundException.class)
+    @ResponseBody
+    public ErrorResponse handlePessoaNotFoundException(PessoaNotFoundException ex) {
         return new ErrorResponse(HttpStatus.NOT_FOUND.value(), ex.getMessage());
     }
 

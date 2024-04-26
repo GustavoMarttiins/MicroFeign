@@ -12,7 +12,7 @@ public class RestExceptionHandle {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(PessoaNotFoundException.class)
     @ResponseBody
-    public ErrorResponse handleTaskNotFoundException(PessoaNotFoundException ex) {
+    public ErrorResponse handlePessoaNotFoundException(PessoaNotFoundException ex) {
         return new ErrorResponse(HttpStatus.NOT_FOUND.value(), ex.getMessage());
     }
 

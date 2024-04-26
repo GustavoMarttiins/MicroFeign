@@ -1,6 +1,7 @@
 package com.br.Pessoa.controller;
 
 import com.br.Pessoa.entity.Pessoa;
+import com.br.Pessoa.response.PessoaResponse;
 import com.br.Pessoa.service.Impl.PessoaServiceImpl;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -18,13 +19,18 @@ public class PessoaController {
 
     private final PessoaServiceImpl pessoaService;
 
+    @GetMapping("/api/{id}/boletos")
+    public PessoaResponse getBoletosByPessoaId(@PathVariable("id") Long id) {
+        return pessoaService.obterBoletosPorIdPessoa(id);
+    }
+
     @GetMapping
     public List<Pessoa> getAllPessoa() {
         List<Pessoa> pessoa = pessoaService.allPessoas();
         return new ResponseEntity<>(pessoa, HttpStatus.OK).getBody();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/api/{id}")
     public Optional<Pessoa> getPessoaById(@PathVariable Long id) {
         Optional<Pessoa> pessoa = pessoaService.pessoaById(id);
         return new ResponseEntity<>(pessoa, HttpStatus.OK).getBody();

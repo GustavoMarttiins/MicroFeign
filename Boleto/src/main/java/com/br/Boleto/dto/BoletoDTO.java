@@ -1,8 +1,8 @@
-package com.br.Boleto.entity;
+package com.br.Boleto.dto;
 
 import com.br.Boleto.enums.StatusBoleto;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,21 +13,14 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Boleto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class BoletoDTO {
     private Long idBoleto;
-    @NotNull
-    private Long idPessoa;
     private BigDecimal valor;
     private BigDecimal valorPago;
     private LocalDate dataVencimento;
     private LocalDate dataPagamento;
     @Enumerated(EnumType.STRING)
     private StatusBoleto status;
-
-
 }
